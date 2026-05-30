@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitha 💙</title>
+    <link rel="stylesheet" href="memoryflix.css">
+</head>
+<body>
+    <div id="startOverlay">
+        <h1>Click to Start </h1>
+    </div>
+
+    <div id="particles"></div>
+    <div id="hearts-container"></div>
+
+    <div id="loader">
+        <h1 id="loadingText">Loading Memories... 0%</h1>
+    </div>
+
+    <audio id="introSound">
+        <source src="dadum.mp3" type="audio/mp3">
+    </audio>
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="introScreen">
+        <video id="netflixVideo" muted playsinline>
+            <source src="n.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="profiles">
+        <h1>Who's Watching?</h1>
+        <div class="profilesBox">
+            <div class="profile" onclick="enterSite()">
+                <img src="photos/78.jpg" alt="Hitha">
+                <p>Hitha 💙</p>
+            </div>
+            <div class="profile" onclick="openTimeline()">
+                <div class="symbol">❤️</div>
+                <p>20 Months</p>
+            </div>
+            <div class="profile" onclick="openForever()">
+                <div class="symbol forever-symbol">♾️</div>
+                <p>Forever</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="website">
+        <div class="hero">
+            <div class="hero-gradient"></div>
+            <div class="overlay">
+                <h1>Hitha 💙</h1>
+                <h2>20 Months Together</h2>
+                <p><span id="typingText"></span><span class="cursor">|</span></p>
+                <div class="hero-buttons">
+                    <button onclick="playSong(this)">Play Music 🎵</button>
+                    <button onclick="showEnding()">Final Message ❤️</button>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Continue Watching</h2>
+            <div id="gallery"></div>
+        </section>
+
+        <section>
+            <h2>Video Memories 🎬</h2>
+            <div class="videoRow">
+                <video class="videoCard" controls>
+                    <source src="videos/1.mp4" type="video/mp4">
+                </video>
+                <video class="videoCard" controls>
+                    <source src="videos/2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Journey 💙</h2>
+            <div class="timeline">
+                <div>
+                    <img src="photos/1.jpg" alt="23 Sept">
+                    <span>23 Sept ❤️</span>
+                </div>
+                <div>
+                    <img src="photos/2.jpg" alt="1 Month">
+                    <span>1 Month 🌸</span>
+                </div>
+                <div>
+                    <img src="photos/3.jpg" alt="6 Months">
+                    <span>6 Months ✨</span>
+                </div>
+                <div>
+                    <img src="photos/4.jpg" alt="1 Year">
+                    <span>1 Year 💙</span>
+                </div>
+                <div>
+                    <img src="photos/5.jpg" alt="20 Months">
+                    <span>20 Months ❤️</span>
+                </div>
+                <div>
+                    <img src="photos/92.jpg" alt="Forever">
+                    <span>Forever ♾️</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="letter">
+                <h2>For Hitha 💌</h2>
+                <p>
+                    20 months.<br>
+                    Countless memories.<br>
+                    Thank you for becoming my comfort, my happiness, my favorite person.<br><br>
+                    💙<br>
+                    - Shankar
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div id="foreverPage" onclick="spawnHeart(event)">
+        <h1>Forever With Hitha 💙</h1>
+        <p>Even after 20 months, you still feel new to my heart. ❤️</p>
+        <p class="hint">(Click anywhere to send love)</p>
+        <button onclick="event.stopPropagation(); closeForever()">Go Back</button>
+    </div>
+
+    <div id="ending">
+        <h1>The End?</h1>
+        <p>No.<br>This is just the beginning of forever with you.<br>❤️</p>
+    </div>
+
+    <div id="h-key-modal" class="hidden-modal">
+        <div class="h-key-content">
+            <button id="close-h-key">×</button>
+            
+            <div class="h-key-reveal-container">
+                <img src="photos/1001.jpg" alt="Secret Message" id="secret-img" class="h-key-back">
+                
+                <canvas id="scratch-canvas" class="h-key-front"></canvas>
+            </div>
+            
+            <p class="h-key-hint">Move your mouse to reveal the secret...</p>
+        </div>
+    </div>
+
+    <script src="memoryflix.js"></script>
+</body>
+</html>
